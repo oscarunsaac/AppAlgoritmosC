@@ -1,0 +1,4 @@
+V:\Sistemas C++2023\AppAlgoritmSort\AppAlgoritmSort\x64\Debug\AppAlgoritmSort.vcxproj.AssemblyReference.cache
+V:\Sistemas C++2023\AppAlgoritmSort\AppAlgoritmSort\x64\Debug\AppAlgoritmSort.vcxproj.SuggestedBindingRedirects.cache
+V:\Sistemas C++2023\AppAlgoritmSort\AppAlgoritmSort\x64\Debug\AppAlgoritmSort.Form1.resources
+V:\Sistemas C++2023\AppAlgoritmSort\AppAlgoritmSort\x64\Debug\AppAlgoritmSort.vcxproj.GenerateResource.cache
