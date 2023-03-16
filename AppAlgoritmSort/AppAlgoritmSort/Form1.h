@@ -23,6 +23,7 @@ namespace CppCLRWinFormsProject {
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
 			unsigned t0, t1;
+	private: System::Windows::Forms::Button^ button1;
 	public:
 		Form1(void)
 		{
@@ -69,40 +70,53 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
 	private: System::Windows::Forms::Panel^ paLateralIzquierdo;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
-	private: System::Windows::Forms::Label^ label28;
+	private: System::Windows::Forms::Label^ lblTiempoStoggeSort;
+
 	private: System::Windows::Forms::Label^ label29;
 	private: System::Windows::Forms::Button^ button12;
-	private: System::Windows::Forms::Label^ label26;
+	private: System::Windows::Forms::Label^ lblTiempoRandomizedSort;
+
 	private: System::Windows::Forms::Label^ label27;
 	private: System::Windows::Forms::Button^ button11;
-	private: System::Windows::Forms::Label^ label24;
+	private: System::Windows::Forms::Label^ lblTiempoBinSort;
+
 	private: System::Windows::Forms::Label^ label25;
 	private: System::Windows::Forms::Button^ button10;
-	private: System::Windows::Forms::Label^ label22;
+	private: System::Windows::Forms::Label^ lblTiempoCountSort;
+
 	private: System::Windows::Forms::Label^ label23;
 	private: System::Windows::Forms::Button^ button9;
-	private: System::Windows::Forms::Label^ label20;
+	private: System::Windows::Forms::Label^ lblTiempoHeapSort;
+
 	private: System::Windows::Forms::Label^ label21;
 	private: System::Windows::Forms::Button^ button8;
-	private: System::Windows::Forms::Label^ label18;
+	private: System::Windows::Forms::Label^ lblTiempoRadixSort;
+
 	private: System::Windows::Forms::Label^ label19;
 	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::Label^ lblTiempoBucketSort;
+
 	private: System::Windows::Forms::Label^ label17;
 	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::Label^ lblTiempoQuickSort;
+
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::Label^ lblTiempoMergeSort;
+
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Label^ lblTiempoInsertSort;
+
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ lblTiempoShellSort;
+
+
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Label^ lblTiempoBurbuja;
+	private: System::Windows::Forms::Label^ lblTiempoBubbleSort;
+
 
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label5;
@@ -168,52 +182,64 @@ namespace CppCLRWinFormsProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series25 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series26 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series27 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series28 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series29 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series30 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series31 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series32 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series33 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series34 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series35 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series36 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->paTitulo = (gcnew System::Windows::Forms::Panel());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->paBooton = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->btnEjecutar = (gcnew System::Windows::Forms::Button());
 			this->paMedio = (gcnew System::Windows::Forms::Panel());
 			this->paDetalle = (gcnew System::Windows::Forms::Panel());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->paLateralIzquierdo = (gcnew System::Windows::Forms::Panel());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoStoggeSort = (gcnew System::Windows::Forms::Label());
 			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->button12 = (gcnew System::Windows::Forms::Button());
-			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoRandomizedSort = (gcnew System::Windows::Forms::Label());
 			this->label27 = (gcnew System::Windows::Forms::Label());
 			this->button11 = (gcnew System::Windows::Forms::Button());
-			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoBinSort = (gcnew System::Windows::Forms::Label());
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoCountSort = (gcnew System::Windows::Forms::Label());
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoHeapSort = (gcnew System::Windows::Forms::Label());
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoRadixSort = (gcnew System::Windows::Forms::Label());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoBucketSort = (gcnew System::Windows::Forms::Label());
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoQuickSort = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoMergeSort = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoInsertSort = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoShellSort = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->lblTiempoBurbuja = (gcnew System::Windows::Forms::Label());
+			this->lblTiempoBubbleSort = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->btnBuubleSort = (gcnew System::Windows::Forms::Button());
@@ -268,12 +294,23 @@ namespace CppCLRWinFormsProject {
 			// 
 			// paBooton
 			// 
+			this->paBooton->Controls->Add(this->button1);
 			this->paBooton->Controls->Add(this->btnEjecutar);
 			this->paBooton->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->paBooton->Location = System::Drawing::Point(0, 616);
 			this->paBooton->Name = L"paBooton";
 			this->paBooton->Size = System::Drawing::Size(1342, 46);
 			this->paBooton->TabIndex = 2;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(749, 11);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 3;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
 			// btnEjecutar
 			// 
@@ -310,18 +347,113 @@ namespace CppCLRWinFormsProject {
 			// 
 			// chart1
 			// 
-			chartArea2->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea2);
+			chartArea3->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea3);
 			this->chart1->Dock = System::Windows::Forms::DockStyle::Fill;
-			legend2->Name = L"Legend1";
-			this->chart1->Legends->Add(legend2);
+			legend3->Name = L"Legend1";
+			this->chart1->Legends->Add(legend3);
 			this->chart1->Location = System::Drawing::Point(606, 0);
 			this->chart1->Name = L"chart1";
-			series2->ChartArea = L"ChartArea1";
-			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series2->Legend = L"Legend1";
-			series2->Name = L"Series1";
-			this->chart1->Series->Add(series2);
+			series25->BorderWidth = 2;
+			series25->ChartArea = L"ChartArea1";
+			series25->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series25->Color = System::Drawing::Color::Blue;
+			series25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			series25->Legend = L"Legend1";
+			series25->LegendText = L"BobbleSort";
+			series25->Name = L"SeriesBurbuja";
+			series26->BorderWidth = 2;
+			series26->ChartArea = L"ChartArea1";
+			series26->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series26->Color = System::Drawing::Color::Red;
+			series26->Legend = L"Legend1";
+			series26->LegendText = L"Shell Sort";
+			series26->Name = L"SeriesShellSort";
+			series27->BorderWidth = 2;
+			series27->ChartArea = L"ChartArea1";
+			series27->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series27->Color = System::Drawing::Color::Black;
+			series27->Legend = L"Legend1";
+			series27->LegendText = L"Insert Sort";
+			series27->Name = L"SeriesInsertSort";
+			series27->YValuesPerPoint = 2;
+			series28->BorderWidth = 2;
+			series28->ChartArea = L"ChartArea1";
+			series28->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series28->Color = System::Drawing::Color::Green;
+			series28->Legend = L"Legend1";
+			series28->Name = L"SeriesMergeSort";
+			series29->BorderWidth = 2;
+			series29->ChartArea = L"ChartArea1";
+			series29->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series29->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			series29->Legend = L"Legend1";
+			series29->LegendText = L"Quick Sort";
+			series29->Name = L"SeriesQuickSort";
+			series30->BorderWidth = 2;
+			series30->ChartArea = L"ChartArea1";
+			series30->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series30->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			series30->Legend = L"Legend1";
+			series30->LegendText = L"Bucket Sort";
+			series30->Name = L"SeriesBucketSort";
+			series31->BorderWidth = 2;
+			series31->ChartArea = L"ChartArea1";
+			series31->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series31->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			series31->Legend = L"Legend1";
+			series31->LegendText = L"Radix Sort";
+			series31->Name = L"SeriesRadixSort";
+			series32->BorderWidth = 2;
+			series32->ChartArea = L"ChartArea1";
+			series32->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series32->Color = System::Drawing::Color::DarkMagenta;
+			series32->Legend = L"Legend1";
+			series32->Name = L"SeriesHeapSort";
+			series33->BorderWidth = 2;
+			series33->ChartArea = L"ChartArea1";
+			series33->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series33->Color = System::Drawing::Color::Fuchsia;
+			series33->Legend = L"Legend1";
+			series33->LegendText = L"Count Sort";
+			series33->Name = L"SeriesCountSort";
+			series34->BorderWidth = 2;
+			series34->ChartArea = L"ChartArea1";
+			series34->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series34->Color = System::Drawing::Color::Lime;
+			series34->Legend = L"Legend1";
+			series34->LegendText = L"Bin Sort";
+			series34->Name = L"SeriesBinSort";
+			series35->BorderWidth = 2;
+			series35->ChartArea = L"ChartArea1";
+			series35->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series35->Color = System::Drawing::Color::Olive;
+			series35->Legend = L"Legend1";
+			series35->LegendText = L"Randomized";
+			series35->Name = L"SeriesRandomized";
+			series36->BorderWidth = 2;
+			series36->ChartArea = L"ChartArea1";
+			series36->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series36->Color = System::Drawing::Color::Gray;
+			series36->Legend = L"Legend1";
+			series36->LegendText = L"Stogge Sort";
+			series36->Name = L"SeriesStoggeSort";
+			this->chart1->Series->Add(series25);
+			this->chart1->Series->Add(series26);
+			this->chart1->Series->Add(series27);
+			this->chart1->Series->Add(series28);
+			this->chart1->Series->Add(series29);
+			this->chart1->Series->Add(series30);
+			this->chart1->Series->Add(series31);
+			this->chart1->Series->Add(series32);
+			this->chart1->Series->Add(series33);
+			this->chart1->Series->Add(series34);
+			this->chart1->Series->Add(series35);
+			this->chart1->Series->Add(series36);
 			this->chart1->Size = System::Drawing::Size(736, 569);
 			this->chart1->TabIndex = 1;
 			this->chart1->Text = L"chart1";
@@ -339,40 +471,40 @@ namespace CppCLRWinFormsProject {
 			// 
 			// groupBox1
 			// 
-			this->groupBox1->Controls->Add(this->label28);
+			this->groupBox1->Controls->Add(this->lblTiempoStoggeSort);
 			this->groupBox1->Controls->Add(this->label29);
 			this->groupBox1->Controls->Add(this->button12);
-			this->groupBox1->Controls->Add(this->label26);
+			this->groupBox1->Controls->Add(this->lblTiempoRandomizedSort);
 			this->groupBox1->Controls->Add(this->label27);
 			this->groupBox1->Controls->Add(this->button11);
-			this->groupBox1->Controls->Add(this->label24);
+			this->groupBox1->Controls->Add(this->lblTiempoBinSort);
 			this->groupBox1->Controls->Add(this->label25);
 			this->groupBox1->Controls->Add(this->button10);
-			this->groupBox1->Controls->Add(this->label22);
+			this->groupBox1->Controls->Add(this->lblTiempoCountSort);
 			this->groupBox1->Controls->Add(this->label23);
 			this->groupBox1->Controls->Add(this->button9);
-			this->groupBox1->Controls->Add(this->label20);
+			this->groupBox1->Controls->Add(this->lblTiempoHeapSort);
 			this->groupBox1->Controls->Add(this->label21);
 			this->groupBox1->Controls->Add(this->button8);
-			this->groupBox1->Controls->Add(this->label18);
+			this->groupBox1->Controls->Add(this->lblTiempoRadixSort);
 			this->groupBox1->Controls->Add(this->label19);
 			this->groupBox1->Controls->Add(this->button7);
-			this->groupBox1->Controls->Add(this->label16);
+			this->groupBox1->Controls->Add(this->lblTiempoBucketSort);
 			this->groupBox1->Controls->Add(this->label17);
 			this->groupBox1->Controls->Add(this->button6);
-			this->groupBox1->Controls->Add(this->label14);
+			this->groupBox1->Controls->Add(this->lblTiempoQuickSort);
 			this->groupBox1->Controls->Add(this->label15);
 			this->groupBox1->Controls->Add(this->button5);
-			this->groupBox1->Controls->Add(this->label12);
+			this->groupBox1->Controls->Add(this->lblTiempoMergeSort);
 			this->groupBox1->Controls->Add(this->label13);
 			this->groupBox1->Controls->Add(this->button4);
-			this->groupBox1->Controls->Add(this->label10);
+			this->groupBox1->Controls->Add(this->lblTiempoInsertSort);
 			this->groupBox1->Controls->Add(this->label11);
 			this->groupBox1->Controls->Add(this->button3);
-			this->groupBox1->Controls->Add(this->label8);
+			this->groupBox1->Controls->Add(this->lblTiempoShellSort);
 			this->groupBox1->Controls->Add(this->label9);
 			this->groupBox1->Controls->Add(this->button2);
-			this->groupBox1->Controls->Add(this->lblTiempoBurbuja);
+			this->groupBox1->Controls->Add(this->lblTiempoBubbleSort);
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->label5);
 			this->groupBox1->Controls->Add(this->btnBuubleSort);
@@ -384,16 +516,16 @@ namespace CppCLRWinFormsProject {
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Algoritmos";
 			// 
-			// label28
+			// lblTiempoStoggeSort
 			// 
-			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblTiempoStoggeSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label28->Location = System::Drawing::Point(230, 440);
-			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(100, 23);
-			this->label28->TabIndex = 36;
-			this->label28->Text = L"0";
-			this->label28->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoStoggeSort->Location = System::Drawing::Point(230, 440);
+			this->lblTiempoStoggeSort->Name = L"lblTiempoStoggeSort";
+			this->lblTiempoStoggeSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoStoggeSort->TabIndex = 36;
+			this->lblTiempoStoggeSort->Text = L"0";
+			this->lblTiempoStoggeSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label29
 			// 
@@ -402,9 +534,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label29->Location = System::Drawing::Point(1, 440);
 			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(96, 18);
+			this->label29->Size = System::Drawing::Size(98, 18);
 			this->label29->TabIndex = 35;
-			this->label29->Text = L"Bubble Sort";
+			this->label29->Text = L"Stogge Sort";
 			// 
 			// button12
 			// 
@@ -416,20 +548,21 @@ namespace CppCLRWinFormsProject {
 			this->button12->Name = L"button12";
 			this->button12->Size = System::Drawing::Size(68, 30);
 			this->button12->TabIndex = 34;
-			this->button12->Tag = L"BobbleSort";
+			this->button12->Tag = L"StoggeSort";
 			this->button12->Text = L"Ejecutar";
 			this->button12->UseVisualStyleBackColor = false;
+			this->button12->Click += gcnew System::EventHandler(this, &Form1::btnBuubleSort_Click);
 			// 
-			// label26
+			// lblTiempoRandomizedSort
 			// 
-			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label26->Location = System::Drawing::Point(230, 404);
-			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(100, 23);
-			this->label26->TabIndex = 33;
-			this->label26->Text = L"0";
-			this->label26->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoRandomizedSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->lblTiempoRandomizedSort->Location = System::Drawing::Point(230, 404);
+			this->lblTiempoRandomizedSort->Name = L"lblTiempoRandomizedSort";
+			this->lblTiempoRandomizedSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoRandomizedSort->TabIndex = 33;
+			this->lblTiempoRandomizedSort->Text = L"0";
+			this->lblTiempoRandomizedSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label27
 			// 
@@ -438,9 +571,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label27->Location = System::Drawing::Point(1, 404);
 			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(96, 18);
+			this->label27->Size = System::Drawing::Size(102, 18);
 			this->label27->TabIndex = 32;
-			this->label27->Text = L"Bubble Sort";
+			this->label27->Text = L"Randomized";
 			// 
 			// button11
 			// 
@@ -452,20 +585,21 @@ namespace CppCLRWinFormsProject {
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(68, 30);
 			this->button11->TabIndex = 31;
-			this->button11->Tag = L"BobbleSort";
+			this->button11->Tag = L"Randomized";
 			this->button11->Text = L"Ejecutar";
 			this->button11->UseVisualStyleBackColor = false;
+			this->button11->Click += gcnew System::EventHandler(this, &Form1::btnBuubleSort_Click);
 			// 
-			// label24
+			// lblTiempoBinSort
 			// 
-			this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblTiempoBinSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label24->Location = System::Drawing::Point(230, 368);
-			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(100, 23);
-			this->label24->TabIndex = 30;
-			this->label24->Text = L"0";
-			this->label24->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoBinSort->Location = System::Drawing::Point(230, 368);
+			this->lblTiempoBinSort->Name = L"lblTiempoBinSort";
+			this->lblTiempoBinSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoBinSort->TabIndex = 30;
+			this->lblTiempoBinSort->Text = L"0";
+			this->lblTiempoBinSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label25
 			// 
@@ -474,9 +608,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label25->Location = System::Drawing::Point(1, 368);
 			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(96, 18);
+			this->label25->Size = System::Drawing::Size(69, 18);
 			this->label25->TabIndex = 29;
-			this->label25->Text = L"Bubble Sort";
+			this->label25->Text = L"Bin Sort";
 			// 
 			// button10
 			// 
@@ -488,20 +622,21 @@ namespace CppCLRWinFormsProject {
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(68, 30);
 			this->button10->TabIndex = 28;
-			this->button10->Tag = L"BobbleSort";
+			this->button10->Tag = L"BinSort";
 			this->button10->Text = L"Ejecutar";
 			this->button10->UseVisualStyleBackColor = false;
+			this->button10->Click += gcnew System::EventHandler(this, &Form1::btnBuubleSort_Click);
 			// 
-			// label22
+			// lblTiempoCountSort
 			// 
-			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblTiempoCountSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label22->Location = System::Drawing::Point(230, 332);
-			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(100, 23);
-			this->label22->TabIndex = 27;
-			this->label22->Text = L"0";
-			this->label22->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoCountSort->Location = System::Drawing::Point(230, 332);
+			this->lblTiempoCountSort->Name = L"lblTiempoCountSort";
+			this->lblTiempoCountSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoCountSort->TabIndex = 27;
+			this->lblTiempoCountSort->Text = L"0";
+			this->lblTiempoCountSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label23
 			// 
@@ -510,9 +645,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label23->Location = System::Drawing::Point(1, 332);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(96, 18);
+			this->label23->Size = System::Drawing::Size(90, 18);
 			this->label23->TabIndex = 26;
-			this->label23->Text = L"Bubble Sort";
+			this->label23->Text = L"Count Sort";
 			// 
 			// button9
 			// 
@@ -524,20 +659,21 @@ namespace CppCLRWinFormsProject {
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(68, 30);
 			this->button9->TabIndex = 25;
-			this->button9->Tag = L"BobbleSort";
+			this->button9->Tag = L"CountSort";
 			this->button9->Text = L"Ejecutar";
 			this->button9->UseVisualStyleBackColor = false;
+			this->button9->Click += gcnew System::EventHandler(this, &Form1::btnBuubleSort_Click);
 			// 
-			// label20
+			// lblTiempoHeapSort
 			// 
-			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblTiempoHeapSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label20->Location = System::Drawing::Point(230, 296);
-			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(100, 23);
-			this->label20->TabIndex = 24;
-			this->label20->Text = L"0";
-			this->label20->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoHeapSort->Location = System::Drawing::Point(230, 296);
+			this->lblTiempoHeapSort->Name = L"lblTiempoHeapSort";
+			this->lblTiempoHeapSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoHeapSort->TabIndex = 24;
+			this->lblTiempoHeapSort->Text = L"0";
+			this->lblTiempoHeapSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label21
 			// 
@@ -546,9 +682,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label21->Location = System::Drawing::Point(1, 296);
 			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(96, 18);
+			this->label21->Size = System::Drawing::Size(84, 18);
 			this->label21->TabIndex = 23;
-			this->label21->Text = L"Bubble Sort";
+			this->label21->Text = L"Heap Sort";
 			// 
 			// button8
 			// 
@@ -560,20 +696,21 @@ namespace CppCLRWinFormsProject {
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(68, 30);
 			this->button8->TabIndex = 22;
-			this->button8->Tag = L"BobbleSort";
+			this->button8->Tag = L"HeapSort";
 			this->button8->Text = L"Ejecutar";
 			this->button8->UseVisualStyleBackColor = false;
+			this->button8->Click += gcnew System::EventHandler(this, &Form1::btnBuubleSort_Click);
 			// 
-			// label18
+			// lblTiempoRadixSort
 			// 
-			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblTiempoRadixSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label18->Location = System::Drawing::Point(230, 260);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(100, 23);
-			this->label18->TabIndex = 21;
-			this->label18->Text = L"0";
-			this->label18->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoRadixSort->Location = System::Drawing::Point(230, 260);
+			this->lblTiempoRadixSort->Name = L"lblTiempoRadixSort";
+			this->lblTiempoRadixSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoRadixSort->TabIndex = 21;
+			this->lblTiempoRadixSort->Text = L"0";
+			this->lblTiempoRadixSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label19
 			// 
@@ -582,9 +719,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label19->Location = System::Drawing::Point(1, 260);
 			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(96, 18);
+			this->label19->Size = System::Drawing::Size(87, 18);
 			this->label19->TabIndex = 20;
-			this->label19->Text = L"Bubble Sort";
+			this->label19->Text = L"Radix Sort";
 			// 
 			// button7
 			// 
@@ -596,20 +733,21 @@ namespace CppCLRWinFormsProject {
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(68, 30);
 			this->button7->TabIndex = 19;
-			this->button7->Tag = L"BobbleSort";
+			this->button7->Tag = L"RadixSort";
 			this->button7->Text = L"Ejecutar";
 			this->button7->UseVisualStyleBackColor = false;
+			this->button7->Click += gcnew System::EventHandler(this, &Form1::btnBuubleSort_Click);
 			// 
-			// label16
+			// lblTiempoBucketSort
 			// 
-			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblTiempoBucketSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label16->Location = System::Drawing::Point(230, 224);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(100, 23);
-			this->label16->TabIndex = 18;
-			this->label16->Text = L"0";
-			this->label16->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoBucketSort->Location = System::Drawing::Point(230, 224);
+			this->lblTiempoBucketSort->Name = L"lblTiempoBucketSort";
+			this->lblTiempoBucketSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoBucketSort->TabIndex = 18;
+			this->lblTiempoBucketSort->Text = L"0";
+			this->lblTiempoBucketSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label17
 			// 
@@ -618,9 +756,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label17->Location = System::Drawing::Point(1, 224);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(96, 18);
+			this->label17->Size = System::Drawing::Size(97, 18);
 			this->label17->TabIndex = 17;
-			this->label17->Text = L"Bubble Sort";
+			this->label17->Text = L"Bucket Sort";
 			// 
 			// button6
 			// 
@@ -632,20 +770,21 @@ namespace CppCLRWinFormsProject {
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(68, 30);
 			this->button6->TabIndex = 16;
-			this->button6->Tag = L"BobbleSort";
+			this->button6->Tag = L"BucketSort";
 			this->button6->Text = L"Ejecutar";
 			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &Form1::btnBuubleSort_Click);
 			// 
-			// label14
+			// lblTiempoQuickSort
 			// 
-			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblTiempoQuickSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label14->Location = System::Drawing::Point(230, 188);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(100, 23);
-			this->label14->TabIndex = 15;
-			this->label14->Text = L"0";
-			this->label14->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoQuickSort->Location = System::Drawing::Point(230, 188);
+			this->lblTiempoQuickSort->Name = L"lblTiempoQuickSort";
+			this->lblTiempoQuickSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoQuickSort->TabIndex = 15;
+			this->lblTiempoQuickSort->Text = L"0";
+			this->lblTiempoQuickSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label15
 			// 
@@ -654,9 +793,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label15->Location = System::Drawing::Point(1, 188);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(96, 18);
+			this->label15->Size = System::Drawing::Size(89, 18);
 			this->label15->TabIndex = 14;
-			this->label15->Text = L"Bubble Sort";
+			this->label15->Text = L"Quick Sort";
 			// 
 			// button5
 			// 
@@ -668,20 +807,21 @@ namespace CppCLRWinFormsProject {
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(68, 30);
 			this->button5->TabIndex = 13;
-			this->button5->Tag = L"BobbleSort";
+			this->button5->Tag = L"QuickSort";
 			this->button5->Text = L"Ejecutar";
 			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &Form1::btnBuubleSort_Click);
 			// 
-			// label12
+			// lblTiempoMergeSort
 			// 
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblTiempoMergeSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(230, 152);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(100, 23);
-			this->label12->TabIndex = 12;
-			this->label12->Text = L"0";
-			this->label12->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoMergeSort->Location = System::Drawing::Point(230, 152);
+			this->lblTiempoMergeSort->Name = L"lblTiempoMergeSort";
+			this->lblTiempoMergeSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoMergeSort->TabIndex = 12;
+			this->lblTiempoMergeSort->Text = L"0";
+			this->lblTiempoMergeSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label13
 			// 
@@ -690,9 +830,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label13->Location = System::Drawing::Point(1, 152);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(96, 18);
+			this->label13->Size = System::Drawing::Size(92, 18);
 			this->label13->TabIndex = 11;
-			this->label13->Text = L"Bubble Sort";
+			this->label13->Text = L"Merge Sort";
 			// 
 			// button4
 			// 
@@ -704,20 +844,21 @@ namespace CppCLRWinFormsProject {
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(68, 30);
 			this->button4->TabIndex = 10;
-			this->button4->Tag = L"BobbleSort";
+			this->button4->Tag = L"MergeSort";
 			this->button4->Text = L"Ejecutar";
 			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &Form1::btnBuubleSort_Click);
 			// 
-			// label10
+			// lblTiempoInsertSort
 			// 
-			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblTiempoInsertSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(230, 116);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(100, 23);
-			this->label10->TabIndex = 9;
-			this->label10->Text = L"0";
-			this->label10->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoInsertSort->Location = System::Drawing::Point(230, 116);
+			this->lblTiempoInsertSort->Name = L"lblTiempoInsertSort";
+			this->lblTiempoInsertSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoInsertSort->TabIndex = 9;
+			this->lblTiempoInsertSort->Text = L"0";
+			this->lblTiempoInsertSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label11
 			// 
@@ -726,9 +867,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label11->Location = System::Drawing::Point(1, 116);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(96, 18);
+			this->label11->Size = System::Drawing::Size(87, 18);
 			this->label11->TabIndex = 8;
-			this->label11->Text = L"Bubble Sort";
+			this->label11->Text = L"Insert Sort";
 			// 
 			// button3
 			// 
@@ -740,20 +881,21 @@ namespace CppCLRWinFormsProject {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(68, 30);
 			this->button3->TabIndex = 7;
-			this->button3->Tag = L"BobbleSort";
+			this->button3->Tag = L"InsertSort";
 			this->button3->Text = L"Ejecutar";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &Form1::btnBuubleSort_Click);
 			// 
-			// label8
+			// lblTiempoShellSort
 			// 
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblTiempoShellSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(230, 80);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(100, 23);
-			this->label8->TabIndex = 6;
-			this->label8->Text = L"0";
-			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoShellSort->Location = System::Drawing::Point(230, 80);
+			this->lblTiempoShellSort->Name = L"lblTiempoShellSort";
+			this->lblTiempoShellSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoShellSort->TabIndex = 6;
+			this->lblTiempoShellSort->Text = L"0";
+			this->lblTiempoShellSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label9
 			// 
@@ -762,9 +904,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label9->Location = System::Drawing::Point(1, 80);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(96, 18);
+			this->label9->Size = System::Drawing::Size(82, 18);
 			this->label9->TabIndex = 5;
-			this->label9->Text = L"Bubble Sort";
+			this->label9->Text = L"Shell Sort";
 			// 
 			// button2
 			// 
@@ -776,20 +918,21 @@ namespace CppCLRWinFormsProject {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(68, 30);
 			this->button2->TabIndex = 4;
-			this->button2->Tag = L"BobbleSort";
+			this->button2->Tag = L"ShellSort";
 			this->button2->Text = L"Ejecutar";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &Form1::btnBuubleSort_Click);
 			// 
-			// lblTiempoBurbuja
+			// lblTiempoBubbleSort
 			// 
-			this->lblTiempoBurbuja->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lblTiempoBubbleSort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblTiempoBurbuja->Location = System::Drawing::Point(230, 44);
-			this->lblTiempoBurbuja->Name = L"lblTiempoBurbuja";
-			this->lblTiempoBurbuja->Size = System::Drawing::Size(100, 23);
-			this->lblTiempoBurbuja->TabIndex = 3;
-			this->lblTiempoBurbuja->Text = L"0";
-			this->lblTiempoBurbuja->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lblTiempoBubbleSort->Location = System::Drawing::Point(230, 44);
+			this->lblTiempoBubbleSort->Name = L"lblTiempoBubbleSort";
+			this->lblTiempoBubbleSort->Size = System::Drawing::Size(100, 23);
+			this->lblTiempoBubbleSort->TabIndex = 3;
+			this->lblTiempoBubbleSort->Text = L"0";
+			this->lblTiempoBubbleSort->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label6
 			// 
@@ -890,6 +1033,7 @@ namespace CppCLRWinFormsProject {
 			// rbNumeros
 			// 
 			this->rbNumeros->AutoSize = true;
+			this->rbNumeros->Checked = true;
 			this->rbNumeros->Location = System::Drawing::Point(6, 12);
 			this->rbNumeros->Name = L"rbNumeros";
 			this->rbNumeros->Size = System::Drawing::Size(67, 17);
@@ -1001,7 +1145,8 @@ namespace CppCLRWinFormsProject {
 		Burbuja _burbuja;
 		int  arr[] = { 5,4,30,21,8,0 };		
 		int len = end(arr) - begin(arr);
-		_burbuja.bubble_sort(arr,len);
+		
+		_burbuja.bubble_sort(arr, len);
 
 
 		string ArrPalabras[] = { "oscar", "abel","silvia","juan","hilda" };
@@ -1015,7 +1160,7 @@ namespace CppCLRWinFormsProject {
 		}
 		t1 = clock();
 		double time = (double(t1 - t0) / CLOCKS_PER_SEC);
-		lblTiempoBurbuja->Text = time.ToString();
+		lblTiempoBubbleSort->Text = time.ToString();
 		MessageBox::Show("se dio click");
 
 	}
@@ -1023,31 +1168,61 @@ namespace CppCLRWinFormsProject {
 		Button^ bu = (Button^)sender;
 		String^ tag = bu->Tag->ToString();
 		if (tag == "BobbleSort"){
-
+			MessageBox::Show(tag);
 		}
-		else if (tag == "BuubleSort") {
-
+		else if (tag == "ShellSort") {
+			MessageBox::Show(tag);
 		}
-
-		
-		
+		else if (tag == "InsertSort") {
+			MessageBox::Show(tag);
+		}
+		else if (tag == "MergeSort") {
+			MessageBox::Show(tag);
+		}
+		else if (tag == "QuickSort") {
+			MessageBox::Show(tag);
+		}
+		else if (tag == "BucketSort") {
+			MessageBox::Show(tag);
+		}
+		else if (tag == "RadixSort") {
+			MessageBox::Show(tag);
+		}
+		else if (tag == "HeapSort") {
+			MessageBox::Show(tag);
+		}
+		else if (tag == "CountSort") {
+			MessageBox::Show(tag);
+		}
+		else if (tag == "BinSort") {
+			MessageBox::Show(tag);
+		}
+		else if (tag == "Randomized") {
+			MessageBox::Show(tag);
+		}
+		else if (tag == "StoggeSort") {
+			MessageBox::Show(tag);
+		}
 	}
 	private: System::Void btnLeerCSV_Click(System::Object^ sender, System::EventArgs^ e) {
-		int Arr[23];
-		Leer(Arr,23);
+		float Arr[10];
+		Leer1(Arr,10);
+		//Leer(Arr,23);
 	}
-		   void Leer(int arr[],int tam)
+		   void Leer(float arr[],int tam)
 		   {
 			   try
 			   {
 				   std::ifstream  fin;				   
 				   std::string line;
-				   fin.open("..\\data\\data_num_int.csv");
+
+				   fin.open("V:\\Sistemas C++2023\\AppAlgoritmSort\\AppAlgoritmSort\\data\\data_num_float.csv");				   
+
 				   int i = 0;
 				   while (!fin.eof() && tam>i)
 				   {
 					   std::getline(fin, line);
-					   arr[i] = stoi(line);
+					   arr[i] = stof(line);
 					   i++;
 				   }
 			   }
@@ -1056,5 +1231,35 @@ namespace CppCLRWinFormsProject {
 
 			   }
 		   }
+		   void Leer1(float arr[], int tam)
+		   {
+			   try
+			   {
+				   std::ifstream  fin;
+				   std::string line;
+				   //fin.open("V:\\Sistemas C++2023\\AppAlgoritmSort\\AppAlgoritmSort\\data\\data_num_float.csv");
+				   fin.open("data\\data_num_float.csv");
+				   //fin.open("..\\data\\data_num_float.csv");
+				   int i = 0;
+				   while (!fin.eof() && i<tam)
+				   {
+					   std::getline(fin, line);
+					   arr[i] = stof(line);
+					   i++;
+				   }
+			   }
+			   catch (const std::exception&)
+			   {
+
+			   }
+		   }
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->chart1->Series["SeriesBurbuja"]->Points->AddXY(5,24);
+	this->chart1->Series["SeriesBurbuja"]->Points->AddXY(10, 50);
+	this->chart1->Series["SeriesBurbuja"]->Points->AddXY(25, 90);
+	this->chart1->Series["SeriesBurbuja"]->Points->AddXY(30, 75);
+	this->chart1->Series["SeriesBurbuja"]->Points->AddXY(80, 80);
+
+}
 };
 }
