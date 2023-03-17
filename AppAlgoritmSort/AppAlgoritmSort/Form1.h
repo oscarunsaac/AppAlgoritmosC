@@ -1,10 +1,21 @@
 #pragma once
+
 #include "Burbuja.hpp"
+#include "Counti.h"
+#include "ShellSort.h"
+#include "MergeSort.h"
+#include "QuickSort.h"
+#include "RadixSort.h"
+#include "HeapSort.h"
 #include<iostream>    
 #include<array> 
 #include <ctime> 
 #include <fstream>
 #include <string>
+
+
+using namespace System;
+using namespace System::Configuration;
 
 namespace CppCLRWinFormsProject {
 
@@ -13,8 +24,7 @@ namespace CppCLRWinFormsProject {
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
-	using namespace System::Drawing;
-
+	using namespace System::Drawing;	
 	using namespace std;
 
 	/// <summary>
@@ -22,7 +32,11 @@ namespace CppCLRWinFormsProject {
 	/// </summary>
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
-			unsigned t0, t1;
+		string* ArrayPalabras;
+		int* ArrayNumeros;		
+
+	unsigned t0, t1;
+	private: System::Windows::Forms::Button^ btnLimpiar;
 	private: System::Windows::Forms::Button^ button1;
 	public:
 		Form1(void)
@@ -126,7 +140,8 @@ namespace CppCLRWinFormsProject {
 
 	private: System::Windows::Forms::GroupBox^ gbTipo;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox1;
+private: System::Windows::Forms::TextBox^ tbCantidad;
+
 	private: System::Windows::Forms::RadioButton^ rbPalabras;
 	private: System::Windows::Forms::RadioButton^ rbNumeros;
 	private: System::Windows::Forms::Panel^ paListas;
@@ -182,23 +197,24 @@ namespace CppCLRWinFormsProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series25 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series26 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series27 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series28 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series29 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series30 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series31 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series32 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series33 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series34 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series35 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series36 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series7 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series8 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series9 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series11 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series12 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->paTitulo = (gcnew System::Windows::Forms::Panel());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->paBooton = (gcnew System::Windows::Forms::Panel());
+			this->btnLimpiar = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->btnEjecutar = (gcnew System::Windows::Forms::Button());
 			this->paMedio = (gcnew System::Windows::Forms::Panel());
@@ -247,7 +263,7 @@ namespace CppCLRWinFormsProject {
 			this->btnLeerCSV = (gcnew System::Windows::Forms::Button());
 			this->gbTipo = (gcnew System::Windows::Forms::GroupBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->tbCantidad = (gcnew System::Windows::Forms::TextBox());
 			this->rbPalabras = (gcnew System::Windows::Forms::RadioButton());
 			this->rbNumeros = (gcnew System::Windows::Forms::RadioButton());
 			this->paListas = (gcnew System::Windows::Forms::Panel());
@@ -294,6 +310,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			// paBooton
 			// 
+			this->paBooton->Controls->Add(this->btnLimpiar);
 			this->paBooton->Controls->Add(this->button1);
 			this->paBooton->Controls->Add(this->btnEjecutar);
 			this->paBooton->Dock = System::Windows::Forms::DockStyle::Bottom;
@@ -302,14 +319,28 @@ namespace CppCLRWinFormsProject {
 			this->paBooton->Size = System::Drawing::Size(1342, 46);
 			this->paBooton->TabIndex = 2;
 			// 
+			// btnLimpiar
+			// 
+			this->btnLimpiar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->btnLimpiar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnLimpiar->Location = System::Drawing::Point(1185, 3);
+			this->btnLimpiar->Name = L"btnLimpiar";
+			this->btnLimpiar->Size = System::Drawing::Size(119, 39);
+			this->btnLimpiar->TabIndex = 4;
+			this->btnLimpiar->Text = L"Limpiar";
+			this->btnLimpiar->UseVisualStyleBackColor = true;
+			this->btnLimpiar->Click += gcnew System::EventHandler(this, &Form1::btnLimpiar_Click);
+			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(749, 11);
+			this->button1->Location = System::Drawing::Point(618, 13);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Visible = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
 			// btnEjecutar
@@ -324,6 +355,7 @@ namespace CppCLRWinFormsProject {
 			this->btnEjecutar->TabIndex = 2;
 			this->btnEjecutar->Text = L"Ejecutar";
 			this->btnEjecutar->UseVisualStyleBackColor = false;
+			this->btnEjecutar->Visible = false;
 			this->btnEjecutar->Click += gcnew System::EventHandler(this, &Form1::btnEjecutar_Click);
 			// 
 			// paMedio
@@ -347,113 +379,113 @@ namespace CppCLRWinFormsProject {
 			// 
 			// chart1
 			// 
-			chartArea3->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea3);
+			chartArea1->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea1);
 			this->chart1->Dock = System::Windows::Forms::DockStyle::Fill;
-			legend3->Name = L"Legend1";
-			this->chart1->Legends->Add(legend3);
+			legend1->Name = L"Legend1";
+			this->chart1->Legends->Add(legend1);
 			this->chart1->Location = System::Drawing::Point(606, 0);
 			this->chart1->Name = L"chart1";
-			series25->BorderWidth = 2;
-			series25->ChartArea = L"ChartArea1";
-			series25->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series25->Color = System::Drawing::Color::Blue;
-			series25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			series1->BorderWidth = 2;
+			series1->ChartArea = L"ChartArea1";
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series1->Color = System::Drawing::Color::Blue;
+			series1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			series25->Legend = L"Legend1";
-			series25->LegendText = L"BobbleSort";
-			series25->Name = L"SeriesBurbuja";
-			series26->BorderWidth = 2;
-			series26->ChartArea = L"ChartArea1";
-			series26->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series26->Color = System::Drawing::Color::Red;
-			series26->Legend = L"Legend1";
-			series26->LegendText = L"Shell Sort";
-			series26->Name = L"SeriesShellSort";
-			series27->BorderWidth = 2;
-			series27->ChartArea = L"ChartArea1";
-			series27->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series27->Color = System::Drawing::Color::Black;
-			series27->Legend = L"Legend1";
-			series27->LegendText = L"Insert Sort";
-			series27->Name = L"SeriesInsertSort";
-			series27->YValuesPerPoint = 2;
-			series28->BorderWidth = 2;
-			series28->ChartArea = L"ChartArea1";
-			series28->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series28->Color = System::Drawing::Color::Green;
-			series28->Legend = L"Legend1";
-			series28->Name = L"SeriesMergeSort";
-			series29->BorderWidth = 2;
-			series29->ChartArea = L"ChartArea1";
-			series29->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series29->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			series1->Legend = L"Legend1";
+			series1->LegendText = L"BobbleSort";
+			series1->Name = L"SeriesBurbuja";
+			series2->BorderWidth = 2;
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series2->Color = System::Drawing::Color::Red;
+			series2->Legend = L"Legend1";
+			series2->LegendText = L"Shell Sort";
+			series2->Name = L"SeriesShellSort";
+			series3->BorderWidth = 2;
+			series3->ChartArea = L"ChartArea1";
+			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series3->Color = System::Drawing::Color::Black;
+			series3->Legend = L"Legend1";
+			series3->LegendText = L"Insert Sort";
+			series3->Name = L"SeriesInsertSort";
+			series3->YValuesPerPoint = 2;
+			series4->BorderWidth = 2;
+			series4->ChartArea = L"ChartArea1";
+			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series4->Color = System::Drawing::Color::Green;
+			series4->Legend = L"Legend1";
+			series4->Name = L"SeriesMergeSort";
+			series5->BorderWidth = 2;
+			series5->ChartArea = L"ChartArea1";
+			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series5->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			series29->Legend = L"Legend1";
-			series29->LegendText = L"Quick Sort";
-			series29->Name = L"SeriesQuickSort";
-			series30->BorderWidth = 2;
-			series30->ChartArea = L"ChartArea1";
-			series30->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series30->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			series5->Legend = L"Legend1";
+			series5->LegendText = L"Quick Sort";
+			series5->Name = L"SeriesQuickSort";
+			series6->BorderWidth = 2;
+			series6->ChartArea = L"ChartArea1";
+			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series6->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			series30->Legend = L"Legend1";
-			series30->LegendText = L"Bucket Sort";
-			series30->Name = L"SeriesBucketSort";
-			series31->BorderWidth = 2;
-			series31->ChartArea = L"ChartArea1";
-			series31->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series31->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+			series6->Legend = L"Legend1";
+			series6->LegendText = L"Bucket Sort";
+			series6->Name = L"SeriesBucketSort";
+			series7->BorderWidth = 2;
+			series7->ChartArea = L"ChartArea1";
+			series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series7->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			series31->Legend = L"Legend1";
-			series31->LegendText = L"Radix Sort";
-			series31->Name = L"SeriesRadixSort";
-			series32->BorderWidth = 2;
-			series32->ChartArea = L"ChartArea1";
-			series32->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series32->Color = System::Drawing::Color::DarkMagenta;
-			series32->Legend = L"Legend1";
-			series32->Name = L"SeriesHeapSort";
-			series33->BorderWidth = 2;
-			series33->ChartArea = L"ChartArea1";
-			series33->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series33->Color = System::Drawing::Color::Fuchsia;
-			series33->Legend = L"Legend1";
-			series33->LegendText = L"Count Sort";
-			series33->Name = L"SeriesCountSort";
-			series34->BorderWidth = 2;
-			series34->ChartArea = L"ChartArea1";
-			series34->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series34->Color = System::Drawing::Color::Lime;
-			series34->Legend = L"Legend1";
-			series34->LegendText = L"Bin Sort";
-			series34->Name = L"SeriesBinSort";
-			series35->BorderWidth = 2;
-			series35->ChartArea = L"ChartArea1";
-			series35->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series35->Color = System::Drawing::Color::Olive;
-			series35->Legend = L"Legend1";
-			series35->LegendText = L"Randomized";
-			series35->Name = L"SeriesRandomized";
-			series36->BorderWidth = 2;
-			series36->ChartArea = L"ChartArea1";
-			series36->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series36->Color = System::Drawing::Color::Gray;
-			series36->Legend = L"Legend1";
-			series36->LegendText = L"Stogge Sort";
-			series36->Name = L"SeriesStoggeSort";
-			this->chart1->Series->Add(series25);
-			this->chart1->Series->Add(series26);
-			this->chart1->Series->Add(series27);
-			this->chart1->Series->Add(series28);
-			this->chart1->Series->Add(series29);
-			this->chart1->Series->Add(series30);
-			this->chart1->Series->Add(series31);
-			this->chart1->Series->Add(series32);
-			this->chart1->Series->Add(series33);
-			this->chart1->Series->Add(series34);
-			this->chart1->Series->Add(series35);
-			this->chart1->Series->Add(series36);
+			series7->Legend = L"Legend1";
+			series7->LegendText = L"Radix Sort";
+			series7->Name = L"SeriesRadixSort";
+			series8->BorderWidth = 2;
+			series8->ChartArea = L"ChartArea1";
+			series8->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series8->Color = System::Drawing::Color::DarkMagenta;
+			series8->Legend = L"Legend1";
+			series8->Name = L"SeriesHeapSort";
+			series9->BorderWidth = 2;
+			series9->ChartArea = L"ChartArea1";
+			series9->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series9->Color = System::Drawing::Color::Fuchsia;
+			series9->Legend = L"Legend1";
+			series9->LegendText = L"Count Sort";
+			series9->Name = L"SeriesCountSort";
+			series10->BorderWidth = 2;
+			series10->ChartArea = L"ChartArea1";
+			series10->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series10->Color = System::Drawing::Color::Lime;
+			series10->Legend = L"Legend1";
+			series10->LegendText = L"Bin Sort";
+			series10->Name = L"SeriesBinSort";
+			series11->BorderWidth = 2;
+			series11->ChartArea = L"ChartArea1";
+			series11->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series11->Color = System::Drawing::Color::Olive;
+			series11->Legend = L"Legend1";
+			series11->LegendText = L"Randomized";
+			series11->Name = L"SeriesRandomized";
+			series12->BorderWidth = 2;
+			series12->ChartArea = L"ChartArea1";
+			series12->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series12->Color = System::Drawing::Color::Gray;
+			series12->Legend = L"Legend1";
+			series12->LegendText = L"Stogge Sort";
+			series12->Name = L"SeriesStoggeSort";
+			this->chart1->Series->Add(series1);
+			this->chart1->Series->Add(series2);
+			this->chart1->Series->Add(series3);
+			this->chart1->Series->Add(series4);
+			this->chart1->Series->Add(series5);
+			this->chart1->Series->Add(series6);
+			this->chart1->Series->Add(series7);
+			this->chart1->Series->Add(series8);
+			this->chart1->Series->Add(series9);
+			this->chart1->Series->Add(series10);
+			this->chart1->Series->Add(series11);
+			this->chart1->Series->Add(series12);
 			this->chart1->Size = System::Drawing::Size(736, 569);
 			this->chart1->TabIndex = 1;
 			this->chart1->Text = L"chart1";
@@ -989,12 +1021,13 @@ namespace CppCLRWinFormsProject {
 			this->btnLeerCSV->TabIndex = 1;
 			this->btnLeerCSV->Text = L"button1";
 			this->btnLeerCSV->UseVisualStyleBackColor = true;
+			this->btnLeerCSV->Visible = false;
 			this->btnLeerCSV->Click += gcnew System::EventHandler(this, &Form1::btnLeerCSV_Click);
 			// 
 			// gbTipo
 			// 
 			this->gbTipo->Controls->Add(this->label4);
-			this->gbTipo->Controls->Add(this->textBox1);
+			this->gbTipo->Controls->Add(this->tbCantidad);
 			this->gbTipo->Controls->Add(this->rbPalabras);
 			this->gbTipo->Controls->Add(this->rbNumeros);
 			this->gbTipo->Location = System::Drawing::Point(12, 11);
@@ -1012,12 +1045,13 @@ namespace CppCLRWinFormsProject {
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Cantidad";
 			// 
-			// textBox1
+			// tbCantidad
 			// 
-			this->textBox1->Location = System::Drawing::Point(91, 32);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(76, 20);
-			this->textBox1->TabIndex = 2;
+			this->tbCantidad->Location = System::Drawing::Point(91, 32);
+			this->tbCantidad->Name = L"tbCantidad";
+			this->tbCantidad->Size = System::Drawing::Size(76, 20);
+			this->tbCantidad->TabIndex = 2;
+			this->tbCantidad->Text = L"10";
 			// 
 			// rbPalabras
 			// 
@@ -1165,44 +1199,65 @@ namespace CppCLRWinFormsProject {
 
 	}
 	private: System::Void btnBuubleSort_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Cursor->Current = Cursors::WaitCursor;
+		
+
 		Button^ bu = (Button^)sender;
 		String^ tag = bu->Tag->ToString();
-		if (tag == "BobbleSort"){
-			MessageBox::Show(tag);
+
+		lbDesordenado->Items->Clear();
+		lbOrdenado->Items->Clear();
+
+		string _tipo_dato = rbNumeros->Checked ? "NUMEROS" : "PALABRAS";
+		String^ Cant = tbCantidad->Text;		
+		string _StrCant = tostandartString(Cant);		
+		int _cant = std::stoi(_StrCant);
+		if (tag == "BobbleSort"){			
+			AlgoritmoBurbuja(_tipo_dato, _cant);
+			MessageBox::Show("Finalizo el Algoritmo: "+tag);
 		}
 		else if (tag == "ShellSort") {
-			MessageBox::Show(tag);
+			AlgoritmoShellSort(_tipo_dato, _cant);
+			MessageBox::Show("Finalizo el Algoritmo: " + tag);
 		}
 		else if (tag == "InsertSort") {
-			MessageBox::Show(tag);
+			MessageBox::Show("Finalizo el Algoritmo: " + tag);
 		}
 		else if (tag == "MergeSort") {
-			MessageBox::Show(tag);
+			AlgoritmoMergeSort(_tipo_dato, _cant);
+			MessageBox::Show("Finalizo el Algoritmo: " + tag);
 		}
 		else if (tag == "QuickSort") {
-			MessageBox::Show(tag);
+			AlgoritmoQuickSort(_tipo_dato, _cant);
+			MessageBox::Show("Finalizo el Algoritmo: " + tag);
 		}
 		else if (tag == "BucketSort") {
-			MessageBox::Show(tag);
+			MessageBox::Show("Finalizo el Algoritmo: " + tag);
 		}
 		else if (tag == "RadixSort") {
-			MessageBox::Show(tag);
+			AlgoritmoRadixSort(_tipo_dato, _cant);
+			MessageBox::Show("Finalizo el Algoritmo: " + tag);
 		}
 		else if (tag == "HeapSort") {
-			MessageBox::Show(tag);
+			AlgoritmoHeapSort(_tipo_dato, _cant);
+			MessageBox::Show("Finalizo el Algoritmo: " + tag);
 		}
 		else if (tag == "CountSort") {
-			MessageBox::Show(tag);
+			AlgoritmoCountSort(_tipo_dato, _cant);
+			MessageBox::Show("Finalizo el Algoritmo: " + tag);
 		}
 		else if (tag == "BinSort") {
-			MessageBox::Show(tag);
+			MessageBox::Show("Finalizo el Algoritmo: " + tag);
 		}
 		else if (tag == "Randomized") {
-			MessageBox::Show(tag);
+			MessageBox::Show("Finalizo el Algoritmo: " + tag);
 		}
 		else if (tag == "StoggeSort") {
-			MessageBox::Show(tag);
+
+			MessageBox::Show("Finalizo el Algoritmo: " + tag);
 		}
+
+		this->Cursor->Current = Cursors::Default;
 	}
 	private: System::Void btnLeerCSV_Click(System::Object^ sender, System::EventArgs^ e) {
 		float Arr[10];
@@ -1253,13 +1308,442 @@ namespace CppCLRWinFormsProject {
 
 			   }
 		   }
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->chart1->Series["SeriesBurbuja"]->Points->AddXY(5,24);
-	this->chart1->Series["SeriesBurbuja"]->Points->AddXY(10, 50);
-	this->chart1->Series["SeriesBurbuja"]->Points->AddXY(25, 90);
-	this->chart1->Series["SeriesBurbuja"]->Points->AddXY(30, 75);
-	this->chart1->Series["SeriesBurbuja"]->Points->AddXY(80, 80);
+			private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+				this->chart1->Series["SeriesBurbuja"]->Points->AddXY(5,24);
+				this->chart1->Series["SeriesBurbuja"]->Points->AddXY(10, 50);
+				this->chart1->Series["SeriesBurbuja"]->Points->AddXY(25, 90);
+				this->chart1->Series["SeriesBurbuja"]->Points->AddXY(30, 75);
+				this->chart1->Series["SeriesBurbuja"]->Points->AddXY(80, 80);
+			}
+			//************************************************************************************************
+			private: static string tostandartString(System::String^ string)
+			{
+				using System::Runtime::InteropServices::Marshal;
+				System::IntPtr pointer = Marshal::StringToHGlobalAnsi(string);
+				char* charPointer = reinterpret_cast<char*>(pointer.ToPointer());
+				std::string returnString(charPointer,string->Length);
+				Marshal::FreeHGlobal(pointer);
+				return returnString;
 
+			}
+			//************************************************************************************************
+			//*****************************			LEER PALABRAS			*******************************
+			void LeerPalabras(string arr[], int tamMax)
+			{
+				try
+				{
+					std::ifstream  fin;
+					std::string line;
+					fin.open("data\\data_palabras.csv");
+					int i = 0;
+					while (!fin.eof() && i < tamMax)
+					{
+						std::getline(fin, line);
+						arr[i] = line;
+						i++;
+					}
+				}
+				catch (const std::exception&)
+				{
+
+				}
+			}
+			//************************************************************************************************
+			//*****************************			LEER NUMEROS			*******************************
+			void LeerNumeros(int arr[], int tamMax)
+			{
+				try
+				{
+					std::ifstream  fin;
+					std::string line;					
+					fin.open("data\\data_num_int.csv");					
+					int i = 0;
+					while (!fin.eof() && i < tamMax)
+					{
+						std::getline(fin, line);
+						arr[i] = stof(line);
+						i++;
+					}
+				}
+				catch (const std::exception&)
+				{
+
+				}
+			}
+			//************************************************************************************************
+			//*****************************			METODO BURBUJA			*******************************
+			private:System::Void AlgoritmoBurbuja(string pTipoDato, int pCantidad)
+			{
+				if (pTipoDato == "NUMEROS")
+				{
+					//int n = 5; // número de elementos del arreglo
+					//int arr[n]; // declaración del arreglo con longitud variable
+					// LEER CSV					
+					ArrayNumeros = new int[pCantidad];
+					LeerNumeros(ArrayNumeros,pCantidad);
+
+					// Mostrar arreglo en listBox de Entrada					
+					int i = 0;
+					while (i < pCantidad && i < 200)
+					{
+						int* ptr = ArrayNumeros + i; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbDesordenado->Items->Add(str2);
+						i++;
+					}					
+					// Ordenar usando el algoritmo
+					Burbuja _burbuja;
+					t0 = clock();
+					_burbuja.bubble_sort(ArrayNumeros, pCantidad);
+					t1 = clock();
+					//Calculando el tiempo
+					double time = (double(t1 - t0) / CLOCKS_PER_SEC);					
+					// Mostrar Tiempo
+					lblTiempoBubbleSort->Text = time.ToString();
+					
+					// Mostrar arreglo Ordenado en listBox de Salida					
+					int j = 0;
+					while (j < pCantidad && j < 200)
+					{
+						int* ptr = ArrayNumeros + j; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbOrdenado->Items->Add(str2);
+						j++;
+					}
+					delete[] ArrayNumeros;
+					//Graficar el Punto
+					this->chart1->Series["SeriesBurbuja"]->Points->AddXY(pCantidad, time);
+					
+				}
+				else // PALABRAS
+				{
+
+				}
+			}
+			//*****************************			METODO BURBUJA			*******************************
+			//************************************************************************************************
+			// //************************************************************************************************
+			//*****************************			METODO Shell			*******************************
+			private:System::Void AlgoritmoShellSort(string pTipoDato, int pCantidad)
+			{
+				if (pTipoDato == "NUMEROS")
+				{
+					//int n = 5; // número de elementos del arreglo
+					//int arr[n]; // declaración del arreglo con longitud variable
+					// LEER CSV					
+					ArrayNumeros = new int[pCantidad];
+					LeerNumeros(ArrayNumeros, pCantidad);
+
+					// Mostrar arreglo en listBox de Entrada					
+					int i = 0;
+					while (i < pCantidad && i < 200)
+					{
+						int* ptr = ArrayNumeros + i; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbDesordenado->Items->Add(str2);
+						i++;
+					}
+					// Ordenar usando el algoritmo
+					ShellSort _ShellSort;
+					t0 = clock();
+					_ShellSort.shell_sort(ArrayNumeros, pCantidad);
+					t1 = clock();
+					//Calculando el tiempo
+					double time = (double(t1 - t0) / CLOCKS_PER_SEC);
+					// Mostrar Tiempo
+					lblTiempoShellSort->Text = time.ToString();
+
+					// Mostrar arreglo Ordenado en listBox de Salida					
+					int j = 0;
+					while (j < pCantidad && j < 200)
+					{
+						int* ptr = ArrayNumeros + j; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbOrdenado->Items->Add(str2);
+						j++;
+					}
+					delete[] ArrayNumeros;
+					//Graficar el Punto
+					this->chart1->Series["SeriesShellSort"]->Points->AddXY(pCantidad, time);
+
+				}
+				else // PALABRAS
+				{
+
+				}
+			}
+			//************************************************************************************************
+			//*****************************			METODO Counting Sort			*******************************
+			private:System::Void AlgoritmoCountSort(string pTipoDato, int pCantidad)
+			{
+				if (pTipoDato == "NUMEROS")
+				{					
+					ArrayNumeros = new int[pCantidad];
+					LeerNumeros(ArrayNumeros, pCantidad);
+
+					// Mostrar arreglo en listBox de Entrada					
+					int i = 0;
+					while (i < pCantidad && i < 200)
+					{
+						int* ptr = ArrayNumeros + i; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbDesordenado->Items->Add(str2);
+						i++;
+					}
+					// Ordenar usando el algoritmo
+					Counti _CountingSort;
+					t0 = clock();
+					_CountingSort.couting_sort(ArrayNumeros, pCantidad);
+					t1 = clock();
+					//Calculando el tiempo
+					double time = (double(t1 - t0) / CLOCKS_PER_SEC);
+					// Mostrar Tiempo
+					lblTiempoBubbleSort->Text = time.ToString();
+
+					// Mostrar arreglo Ordenado en listBox de Salida					
+					int j = 0;
+					while (j < pCantidad && j < 200)
+					{
+						int* ptr = ArrayNumeros + j; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbOrdenado->Items->Add(str2);
+						j++;
+					}
+					delete[] ArrayNumeros;
+					//Graficar el Punto
+					this->chart1->Series["SeriesCountSort"]->Points->AddXY(pCantidad, time);
+				}
+				else // PALABRAS
+				{
+
+				}
+			}
+				   //*****************************			METODO Merge			*******************************
+			private:System::Void AlgoritmoMergeSort(string pTipoDato, int pCantidad)
+			{
+				if (pTipoDato == "NUMEROS")
+				{
+					//int n = 5; // número de elementos del arreglo
+					//int arr[n]; // declaración del arreglo con longitud variable
+					// LEER CSV					
+					ArrayNumeros = new int[pCantidad];
+					LeerNumeros(ArrayNumeros, pCantidad);
+
+					// Mostrar arreglo en listBox de Entrada					
+					int i = 0;
+					while (i < pCantidad && i < 200)
+					{
+						int* ptr = ArrayNumeros + i; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbDesordenado->Items->Add(str2);
+						i++;
+					}
+					// Ordenar usando el algoritmo
+					MergeSort _MergeSort;
+					t0 = clock();
+					_MergeSort.merge_sort(ArrayNumeros, pCantidad);
+					t1 = clock();
+					//Calculando el tiempo
+					double time = (double(t1 - t0) / CLOCKS_PER_SEC);
+					// Mostrar Tiempo
+					lblTiempoMergeSort->Text = time.ToString();
+
+					// Mostrar arreglo Ordenado en listBox de Salida					
+					int j = 0;
+					while (j < pCantidad && j < 200)
+					{
+						int* ptr = ArrayNumeros + j; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbOrdenado->Items->Add(str2);
+						j++;
+					}
+					delete[] ArrayNumeros;
+					//Graficar el Punto
+					this->chart1->Series["SeriesMergeSort"]->Points->AddXY(pCantidad, time);
+
+				}
+				else // PALABRAS
+				{
+
+				}
+			}
+				   //*****************************			METODO QuickSort			*******************************
+			private:System::Void AlgoritmoQuickSort(string pTipoDato, int pCantidad)
+			{
+				if (pTipoDato == "NUMEROS")
+				{
+					//int n = 5; // número de elementos del arreglo
+					//int arr[n]; // declaración del arreglo con longitud variable
+					// LEER CSV					
+					ArrayNumeros = new int[pCantidad];
+					LeerNumeros(ArrayNumeros, pCantidad);
+
+					// Mostrar arreglo en listBox de Entrada					
+					int i = 0;
+					while (i < pCantidad && i < 200)
+					{
+						int* ptr = ArrayNumeros + i; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbDesordenado->Items->Add(str2);
+						i++;
+					}
+					// Ordenar usando el algoritmo
+					QuickSort _QuickSort;
+					t0 = clock();
+					_QuickSort.quick_sort(ArrayNumeros, pCantidad);
+					t1 = clock();
+					//Calculando el tiempo
+					double time = (double(t1 - t0) / CLOCKS_PER_SEC);
+					// Mostrar Tiempo
+					lblTiempoQuickSort->Text = time.ToString();
+
+					// Mostrar arreglo Ordenado en listBox de Salida					
+					int j = 0;
+					while (j < pCantidad && j < 200)
+					{
+						int* ptr = ArrayNumeros + j; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbOrdenado->Items->Add(str2);
+						j++;
+					}
+					delete[] ArrayNumeros;
+					//Graficar el Punto
+					this->chart1->Series["SeriesQuickSort"]->Points->AddXY(pCantidad, time);
+
+				}
+				else // PALABRAS
+				{
+
+				}
+			}
+				   //*****************************			METODO RadixSort			*******************************
+			private:System::Void AlgoritmoRadixSort(string pTipoDato, int pCantidad)
+			{
+				if (pTipoDato == "NUMEROS")
+				{
+					//int n = 5; // número de elementos del arreglo
+					//int arr[n]; // declaración del arreglo con longitud variable
+					// LEER CSV					
+					ArrayNumeros = new int[pCantidad];
+					LeerNumeros(ArrayNumeros, pCantidad);
+
+					// Mostrar arreglo en listBox de Entrada					
+					int i = 0;
+					while (i < pCantidad && i < 200)
+					{
+						int* ptr = ArrayNumeros + i; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbDesordenado->Items->Add(str2);
+						i++;
+					}
+					// Ordenar usando el algoritmo
+					RadixSort _RadixSort;
+					t0 = clock();
+					_RadixSort.radix_sort(ArrayNumeros, pCantidad);
+					t1 = clock();
+					//Calculando el tiempo
+					double time = (double(t1 - t0) / CLOCKS_PER_SEC);
+					// Mostrar Tiempo
+					lblTiempoRadixSort->Text = time.ToString();
+
+					// Mostrar arreglo Ordenado en listBox de Salida					
+					int j = 0;
+					while (j < pCantidad && j < 200)
+					{
+						int* ptr = ArrayNumeros + j; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbOrdenado->Items->Add(str2);
+						j++;
+					}
+					delete[] ArrayNumeros;
+					//Graficar el Punto
+					this->chart1->Series["SeriesRadixSort"]->Points->AddXY(pCantidad, time);
+
+				}
+				else // PALABRAS
+				{
+
+				}
+			}
+				   //*****************************			METODO HeapSort			*******************************
+			private:System::Void AlgoritmoHeapSort(string pTipoDato, int pCantidad)
+			{
+				if (pTipoDato == "NUMEROS")
+				{
+					//int n = 5; // número de elementos del arreglo
+					//int arr[n]; // declaración del arreglo con longitud variable
+					// LEER CSV					
+					ArrayNumeros = new int[pCantidad];
+					LeerNumeros(ArrayNumeros, pCantidad);
+
+					// Mostrar arreglo en listBox de Entrada					
+					int i = 0;
+					while (i < pCantidad && i < 200)
+					{
+						int* ptr = ArrayNumeros + i; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbDesordenado->Items->Add(str2);
+						i++;
+					}
+					// Ordenar usando el algoritmo
+					HeapSort _HeapSort;
+					t0 = clock();
+					_HeapSort.heap_sort(ArrayNumeros, pCantidad);
+					t1 = clock();
+					//Calculando el tiempo
+					double time = (double(t1 - t0) / CLOCKS_PER_SEC);
+					// Mostrar Tiempo
+					lblTiempoHeapSort->Text = time.ToString();
+
+					// Mostrar arreglo Ordenado en listBox de Salida					
+					int j = 0;
+					while (j < pCantidad && j < 200)
+					{
+						int* ptr = ArrayNumeros + j; // puntero al elemento i del arreglo
+						string var = std::to_string(*ptr);
+						String^ str2 = gcnew String(var.c_str());
+						lbOrdenado->Items->Add(str2);
+						j++;
+					}
+					delete[] ArrayNumeros;
+					//Graficar el Punto
+					this->chart1->Series["SeriesHeapSort"]->Points->AddXY(pCantidad, time);
+
+				}
+				else // PALABRAS
+				{
+
+				}
+			}
+				   
+
+private: System::Void btnLimpiar_Click(System::Object^ sender, System::EventArgs^ e) {	
+	chart1->Series["SeriesBurbuja"]->Points->Clear();
+	chart1->Series["SeriesShellSort"]->Points->Clear();
+	chart1->Series["SeriesInsertSort"]->Points->Clear();
+	chart1->Series["SeriesMergeSort"]->Points->Clear();
+	chart1->Series["SeriesQuickSort"]->Points->Clear();
+	chart1->Series["SeriesBucketSort"]->Points->Clear();
+	chart1->Series["SeriesRadixSort"]->Points->Clear();
+	chart1->Series["SeriesHeapSort"]->Points->Clear();
+	chart1->Series["SeriesCountSort"]->Points->Clear();
+	chart1->Series["SeriesBinSort"]->Points->Clear();
+	chart1->Series["SeriesRandomized"]->Points->Clear();
+	chart1->Series["SeriesStoggeSort"]->Points->Clear();
+	
 }
 };
 }

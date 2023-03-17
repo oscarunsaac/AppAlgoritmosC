@@ -1,5 +1,20 @@
-﻿  CppCLR_WinFormsProject.cpp
-V:\Sistemas C++2023\AppAlgoritmSort\AppAlgoritmSort\Form1.h(1147,11): warning C4244: 'inicializando': conversión de '__int64' a 'int'; posible pérdida de datos
-V:\Sistemas C++2023\AppAlgoritmSort\AppAlgoritmSort\Form1.h(1153,12): warning C4244: 'inicializando': conversión de '__int64' a 'int'; posible pérdida de datos
+﻿  pch.cpp
+  AssemblyInfo.cpp
+  BucketSort.cpp
+  Burbuja.cpp
+  Counti.cpp
+  CountingSort.cpp
+  CppCLR_WinFormsProject.cpp
+V:\Sistemas C++2023\AppAlgoritmosC\AppAlgoritmSort\AppAlgoritmSort\Form1.h(1181,11): warning C4244: 'inicializando': conversión de '__int64' a 'int'; posible pérdida de datos
+V:\Sistemas C++2023\AppAlgoritmosC\AppAlgoritmSort\AppAlgoritmSort\Form1.h(1187,12): warning C4244: 'inicializando': conversión de '__int64' a 'int'; posible pérdida de datos
+V:\Sistemas C++2023\AppAlgoritmosC\AppAlgoritmSort\AppAlgoritmSort\Form1.h(1364,20): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Form1.cpp
+  HeapSort.cpp
+  MergeSort.cpp
+  QuickSort.cpp
+  RadixSort.cpp
+  ShellSort.cpp
+  Generando código...
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  AppAlgoritmSort.vcxproj -> V:\Sistemas C++2023\AppAlgoritmSort\x64\Debug\AppAlgoritmSort.exe
+  AppAlgoritmSort.vcxproj -> V:\Sistemas C++2023\AppAlgoritmosC\AppAlgoritmSort\x64\Debug\AppAlgoritmSort.exe
